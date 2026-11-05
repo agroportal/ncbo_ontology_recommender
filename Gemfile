@@ -1,23 +1,24 @@
 source 'https://rubygems.org'
 
-gem 'cube-ruby'
-gem 'faraday', '~> 2.0'
-gem 'ffi'
 gem 'oj', '~> 3.0'
-gem 'rake', '~> 10.0'
-gem 'redis'
+gem 'rake'
 gem 'request_store'
+gem 'parallel'
+gem 'json-ld'
 gem 'jwt'
 
 # NCBO
-gem 'goo', github: 'ontoportal-lirmm/goo', branch: 'development'
-gem 'ncbo_annotator', git: 'https://github.com/ontoportal-lirmm/ncbo_annotator.git', branch: 'master'
-gem 'ontologies_linked_data', github: 'ontoportal-lirmm/ontologies_linked_data', branch: 'development'
-gem 'sparql-client', github: 'ontoportal-lirmm/sparql-client', branch: 'master'
+gem 'goo', github: 'agroportal/goo', branch: 'master'
+gem 'ncbo_annotator', github: 'agroportal/ncbo_annotator', branch: 'master'
+gem 'ontologies_linked_data', github: 'agroportal/ontologies_linked_data', branch: 'master'
+
+# agroportal ontologies_linked_data requires net/ftp, a bundled gem since Ruby 3.1
+gem 'net-ftp'
 
 group :development do
+  gem 'ontoportal_testkit', github: 'agroportal/ontoportal_testkit', branch: 'main'
+  gem 'minitest'
+  gem 'pry'
   gem 'simplecov'
   gem 'simplecov-cobertura' # for codecov.io
-  gem 'minitest', '~> 4.0'
-  gem 'pry'
 end
