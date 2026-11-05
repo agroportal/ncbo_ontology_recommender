@@ -1,23 +1,27 @@
 GIT
-  remote: https://github.com/ontoportal-lirmm/goo.git
-  revision: cd5bc312bd3acd2ff056a87a6f37b5419f3444dc
-  branch: development
+  remote: https://github.com/agroportal/goo.git
+  revision: 5ad999bc454d561de6e23cdf9a298d7dddfaf78d
+  branch: master
   specs:
     goo (0.0.2)
+      activesupport
+      addressable (~> 2.8)
       pry
-      rdf (= 3.2.11)
+      rdf
       rdf-raptor
       rdf-rdfxml
       rdf-vocab
       redis
+      request_store
       rest-client
-      rsolr
-      sparql-client
+      rsolr (>= 2.6.0)
+      sparql-client (= 3.2.2)
+      stoplight (~> 5.0)
       uuid
 
 GIT
-  remote: https://github.com/ontoportal-lirmm/ncbo_annotator.git
-  revision: 57204d8e54432ba660af4c49806e2a3019a23fa2
+  remote: https://github.com/agroportal/ncbo_annotator.git
+  revision: 64d68acfd71e4fccb3958f9256c8d8525029929f
   branch: master
   specs:
     ncbo_annotator (0.0.1)
@@ -27,9 +31,9 @@ GIT
       ruby-xxHash
 
 GIT
-  remote: https://github.com/ontoportal-lirmm/ontologies_linked_data.git
-  revision: c9b8b42b09f9a734507965a9529809ea581ef58a
-  branch: development
+  remote: https://github.com/agroportal/ontologies_linked_data.git
+  revision: 144bc44ab0c1e029f0fb3ac52a35c23fa56c5455
+  branch: master
   specs:
     ontologies_linked_data (0.0.1)
       activesupport
@@ -43,166 +47,234 @@ GIT
       pony
       rack
       rack-test
+      rdf-rdfxml
+      roo
       rsolr
-      rubyzip
+      rubyzip (= 1.3.0)
 
 GIT
-  remote: https://github.com/ontoportal-lirmm/sparql-client.git
-  revision: aed51baf4106fd0f3d0e3f9238f0aad9406aa3f0
-  branch: master
+  remote: https://github.com/agroportal/ontoportal_testkit.git
+  revision: f9d8742bb86d67f47b849e055e564be7e7ffb8de
+  branch: main
   specs:
-    sparql-client (1.0.1)
-      json_pure (>= 1.4)
-      net-http-persistent (= 2.9.4)
-      rdf (>= 1.0)
+    ontoportal_testkit (0.1.0)
+      rake (>= 13.0)
 
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (4.0.13)
-      i18n (~> 0.6, >= 0.6.9)
-      minitest (~> 4.2)
-      multi_json (~> 1.3)
-      thread_safe (~> 0.1)
-      tzinfo (~> 0.3.37)
-    base64 (0.2.0)
-    bcrypt (3.1.20)
-    bigdecimal (3.1.6)
-    builder (3.2.4)
+    activesupport (8.1.4)
+      base64
+      bigdecimal
+      concurrent-ruby (~> 1.0, >= 1.3.1)
+      connection_pool (>= 2.2.5)
+      drb
+      i18n (>= 1.6, < 2)
+      json
+      logger (>= 1.4.2)
+      minitest (>= 5.1)
+      securerandom (>= 0.3)
+      tzinfo (~> 2.0, >= 2.0.5)
+      uri (>= 0.13.1)
+    addressable (2.9.0)
+      public_suffix (>= 2.0.2, < 8.0)
+    base64 (0.3.0)
+    bcp47_spec (0.2.1)
+    bcrypt (3.1.22)
+    bigdecimal (3.3.1)
+    builder (3.3.0)
     coderay (1.1.3)
-    concurrent-ruby (1.2.3)
-    connection_pool (2.4.1)
-    cube-ruby (0.0.3)
-    date (3.3.4)
-    docile (1.4.0)
-    domain_name (0.6.20240107)
-    faraday (2.8.1)
-      base64
-      faraday-net_http (>= 2.0, < 3.1)
-      ruby2_keywords (>= 0.0.4)
-    faraday-net_http (3.0.2)
-    ffi (1.16.3)
-    htmlentities (4.3.4)
+    concurrent-ruby (1.3.8)
+    connection_pool (3.0.2)
+    date (3.6.0)
+    domain_name (0.6.20260921)
+    drb (2.2.3)
+    faraday (2.14.4)
+      faraday-net_http (>= 2.0, < 3.5)
+      json
+      logger
+    faraday-net_http (3.4.4)
+      net-http (~> 0.5)
+    ffi (1.17.4-aarch64-linux-gnu)
+    ffi (1.17.4-arm64-darwin)
+    ffi (1.17.4-x86_64-darwin)
+    ffi (1.17.4-x86_64-linux-gnu)
+    htmlentities (4.4.2)
     http-accept (1.7.0)
-    http-cookie (1.0.5)
+    http-cookie (1.1.6)
       domain_name (~> 0.5)
-    i18n (0.9.5)
+    i18n (1.15.2)
       concurrent-ruby (~> 1.0)
-    json (2.7.1)
-    json_pure (2.7.1)
-    jwt (2.8.0)
+    io-console (0.9.4)
+    json (3.0.2)
+    json-canonicalization (1.0.0)
+    json-ld (3.3.2)
+      htmlentities (~> 4.3)
+      json-canonicalization (~> 1.0)
+      link_header (~> 0.0, >= 0.0.8)
+      multi_json (~> 1.15)
+      rack (>= 2.2, < 4)
+      rdf (~> 3.3)
+      rexml (~> 3.2)
+    jwt (3.3.0)
       base64
-    libxml-ruby (5.0.2)
+    libxml-ruby (5.0.6)
     link_header (0.0.8)
-    logger (1.6.0)
+    logger (1.7.0)
     macaddr (1.7.2)
       systemu (~> 2.6.5)
-    mail (2.8.1)
+    mail (2.9.1)
+      logger
       mini_mime (>= 0.1.1)
       net-imap
       net-pop
       net-smtp
-    method_source (1.0.0)
-    mime-types (3.5.2)
-      mime-types-data (~> 3.2015)
-    mime-types-data (3.2024.0206)
+    method_source (1.1.0)
+    mime-types (3.7.0)
+      logger
+      mime-types-data (~> 3.2025, >= 3.2025.0507)
+    mime-types-data (3.2026.1006)
     mini_mime (1.1.5)
-    minitest (4.7.5)
-    multi_json (1.15.0)
-    net-http-persistent (2.9.4)
-    net-imap (0.4.10)
+    minitest (6.0.6)
+      drb (~> 2.0)
+      prism (~> 1.5)
+    multi_json (1.21.2)
+    net-ftp (0.3.9)
+      net-protocol
+      time
+    net-http (0.10.0)
+      net-protocol (>= 0.3.0)
+      uri (>= 0.11.1)
+    net-http-persistent (4.0.8)
+      connection_pool (>= 2.2.4, < 4)
+    net-imap (0.6.8)
       date
       net-protocol
     net-pop (0.1.2)
       net-protocol
-    net-protocol (0.2.2)
+    net-protocol (0.4.0)
       timeout
-    net-smtp (0.4.0.1)
+    net-smtp (0.5.2)
       net-protocol
     netrc (0.11.0)
-    oj (3.16.3)
+    nokogiri (1.19.7-aarch64-linux-gnu)
+      racc (~> 1.4)
+    nokogiri (1.19.7-arm64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.19.7-x86_64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.19.7-x86_64-linux-gnu)
+      racc (~> 1.4)
+    oj (3.17.7)
       bigdecimal (>= 3.0)
+      ostruct (>= 0.2)
     omni_logger (0.1.4)
       logger
+    ostruct (0.6.3)
+    parallel (1.28.0)
     pony (1.13.1)
       mail (>= 2.0)
-    pry (0.14.2)
+    prism (1.9.0)
+    pry (0.16.0)
       coderay (~> 1.1)
       method_source (~> 1.0)
-    rack (3.0.9.1)
-    rack-test (2.1.0)
+      reline (>= 0.6.0)
+    public_suffix (7.0.5)
+    racc (1.8.1)
+    rack (3.2.7)
+    rack-test (2.3.0)
       rack (>= 1.3)
-    rake (10.5.0)
-    rdf (3.2.11)
+    rake (13.4.2)
+    rdf (3.3.4)
+      bcp47_spec (~> 0.2)
+      bigdecimal (~> 3.1, >= 3.1.5)
       link_header (~> 0.0, >= 0.0.8)
+      logger (~> 1.5)
+      ostruct (~> 0.6)
+      readline (~> 0.0)
     rdf-raptor (3.2.0)
       ffi (~> 1.15)
       rdf (~> 3.2)
-    rdf-rdfxml (3.2.2)
-      builder (~> 3.2)
+    rdf-rdfxml (3.3.0)
+      builder (~> 3.2, >= 3.2.4)
       htmlentities (~> 4.3)
-      rdf (~> 3.2)
-      rdf-xsd (~> 3.2)
-    rdf-vocab (3.2.7)
-      rdf (~> 3.2, >= 3.2.4)
-    rdf-xsd (3.2.1)
-      rdf (~> 3.2)
+      rdf (~> 3.3)
+      rdf-xsd (~> 3.3)
+    rdf-vocab (3.3.3)
+      rdf (~> 3.3)
+    rdf-xsd (3.3.0)
+      rdf (~> 3.3)
       rexml (~> 3.2)
-    redis (5.1.0)
-      redis-client (>= 0.17.0)
-    redis-client (0.20.0)
+    readline (0.0.4)
+      reline
+    redis (6.0.0)
+      redis-client (= 0.30.1)
+    redis-client (0.30.1)
       connection_pool
-    request_store (1.6.0)
+    reline (0.7.0)
+      io-console (~> 0.5)
+    request_store (1.7.0)
       rack (>= 1.4)
     rest-client (2.1.0)
       http-accept (>= 1.7.0, < 2.0)
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
-    rexml (3.2.6)
-    rsolr (2.5.0)
+    rexml (3.4.4)
+    roo (2.10.1)
+      nokogiri (~> 1)
+      rubyzip (>= 1.3.0, < 3.0.0)
+    rsolr (3.0.0)
       builder (>= 2.1.2)
-      faraday (>= 0.9, < 3, != 2.0.0)
+      faraday (>= 1.0, < 3)
     ruby-xxHash (0.4.0.2)
-    ruby2_keywords (0.0.5)
-    rubyzip (2.3.2)
-    simplecov (0.22.0)
-      docile (~> 1.1)
-      simplecov-html (~> 0.11)
-      simplecov_json_formatter (~> 0.1)
-    simplecov-cobertura (2.1.0)
+    rubyzip (1.3.0)
+    securerandom (0.4.1)
+    simplecov (1.2.0)
+    simplecov-cobertura (4.0.0)
       rexml
-      simplecov (~> 0.19)
-    simplecov-html (0.12.3)
-    simplecov_json_formatter (0.1.4)
+      simplecov (~> 1.0)
+    sparql-client (3.2.2)
+      net-http-persistent (~> 4.0, >= 4.0.2)
+      rdf (~> 3.2, >= 3.2.11)
+    stoplight (5.8.3)
+      concurrent-ruby
+      zeitwerk
     systemu (2.6.5)
-    thread_safe (0.3.6)
-    timeout (0.4.1)
-    tzinfo (0.3.62)
+    time (0.5.0)
+      date
+    timeout (0.6.1)
+    tzinfo (2.0.6)
+      concurrent-ruby (~> 1.0)
+    uri (1.1.2)
     uuid (2.3.9)
       macaddr (~> 1.0)
+    zeitwerk (2.8.3)
 
 PLATFORMS
-  x86_64-darwin-21
-  x86_64-darwin-23
+  aarch64-linux
+  arm64-darwin-22
+  arm64-darwin-23
+  arm64-darwin-24
+  x86_64-darwin-25
+  x86_64-linux
 
 DEPENDENCIES
-  cube-ruby
-  faraday (~> 2.0)
-  ffi
   goo!
+  json-ld
   jwt
-  minitest (~> 4.0)
+  minitest
   ncbo_annotator!
+  net-ftp
   oj (~> 3.0)
   ontologies_linked_data!
+  ontoportal_testkit!
+  parallel
   pry
-  rake (~> 10.0)
-  redis
+  rake
   request_store
   simplecov
   simplecov-cobertura
-  sparql-client!
 
 BUNDLED WITH
-   2.4.22
+  4.0.10
