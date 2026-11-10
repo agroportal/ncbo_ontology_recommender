@@ -1,11 +1,12 @@
 GIT
   remote: https://github.com/agroportal/goo.git
-  revision: 5ad999bc454d561de6e23cdf9a298d7dddfaf78d
-  branch: master
+  revision: 24adc28751591673ec5ce3d36c2fdcc32339e844
+  branch: chore/ruby-3.4.12
   specs:
     goo (0.0.2)
       activesupport
       addressable (~> 2.8)
+      benchmark
       pry
       rdf
       rdf-raptor
@@ -32,12 +33,13 @@ GIT
 
 GIT
   remote: https://github.com/agroportal/ontologies_linked_data.git
-  revision: 144bc44ab0c1e029f0fb3ac52a35c23fa56c5455
-  branch: master
+  revision: 0cade277abb550e2f8d5ba42a4cfb637be1a0028
+  branch: chore/ruby-3.4.12
   specs:
     ontologies_linked_data (0.0.1)
       activesupport
       bcrypt
+      csv
       goo
       json
       libxml-ruby
@@ -54,8 +56,8 @@ GIT
 
 GIT
   remote: https://github.com/agroportal/ontoportal_testkit.git
-  revision: f9d8742bb86d67f47b849e055e564be7e7ffb8de
-  branch: main
+  revision: 284f32127185fea72816d0062ba8e0da4723cb9b
+  branch: chore/ruby-3.4.12-bookworm
   specs:
     ontoportal_testkit (0.1.0)
       rake (>= 13.0)
@@ -81,11 +83,13 @@ GEM
     base64 (0.3.0)
     bcp47_spec (0.2.1)
     bcrypt (3.1.22)
+    benchmark (0.5.0)
     bigdecimal (3.3.1)
     builder (3.3.0)
     coderay (1.1.3)
     concurrent-ruby (1.3.8)
     connection_pool (3.0.2)
+    csv (3.3.7)
     date (3.6.0)
     domain_name (0.6.20260921)
     drb (2.2.3)
