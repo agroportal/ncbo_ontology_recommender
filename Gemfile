@@ -16,7 +16,7 @@ gem 'ontologies_linked_data', github: 'agroportal/ontologies_linked_data', branc
 gem 'net-ftp'
 
 group :development do
-  gem 'ontoportal_testkit', github: 'agroportal/ontoportal_testkit', branch: 'chore/ruby-3.4.12-bookworm'
+  gem 'ontoportal_testkit', github: 'agroportal/ontoportal_testkit', branch: 'main'
   gem 'minitest'
   gem 'pry'
   gem 'simplecov'
