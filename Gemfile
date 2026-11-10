@@ -8,9 +8,9 @@ gem 'json-ld'
 gem 'jwt'
 
 # NCBO
-gem 'goo', github: 'agroportal/goo', branch: 'chore/ruby-3.4.12'
+gem 'goo', github: 'agroportal/goo', branch: 'master'
 gem 'ncbo_annotator', github: 'agroportal/ncbo_annotator', branch: 'master'
-gem 'ontologies_linked_data', github: 'agroportal/ontologies_linked_data', branch: 'chore/ruby-3.4.12'
+gem 'ontologies_linked_data', github: 'agroportal/ontologies_linked_data', branch: 'master'
 
 # agroportal ontologies_linked_data requires net/ftp, a bundled gem since Ruby 3.1
 gem 'net-ftp'
